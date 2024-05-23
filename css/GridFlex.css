@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #f0f0f0;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} */
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: #f0f0f0;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Ensure the last row of cards stretch to fill the container width */
+.grid-container > .card:nth-child(4) {
+    grid-column: span 2;
+}
+
+.grid-container > .card:nth-child(5) {
+    grid-column: span 5;
+}
+
+@media (max-width: 800px) {
+    .grid-container > .card:nth-child(4),
+    .grid-container > .card:nth-child(5) {
+        grid-column: span 3;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container > .card:nth-child(4),
+    .grid-container > .card:nth-child(5) {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 400px) {
+    .grid-container > .card {
+        grid-column: span 1;
+    }
+}
