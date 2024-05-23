@@ -27,8 +27,8 @@ a:visited {
 
 
 .header-nav__list {
+    flex-wrap: wrap;
     display: flex;
-    gap: 40px;
     list-style: none;
     justify-content: center;
     padding: 5px;
@@ -37,8 +37,11 @@ a:visited {
 
 .header-nav__link{
     background-color: #007bff;
-    padding: 10px 20px;
+    min-width: 200px;
+    padding: 10px 40px;
     border-radius: 5%;
+    margin: 10px 20px;
+    text-align: center;
     
 }
 

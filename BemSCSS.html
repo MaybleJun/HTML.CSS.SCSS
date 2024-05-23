@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BEM SCSS</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/BemSCSS.css">
 </head>
 <body>
     <header>
@@ -17,22 +18,51 @@
     </header>
 
     <main class="main">
-        <h1 class="main__title">BUTTON UP</h1>
         <section class="about">
             <div class="about__container">
-                <h1 class="about__title">О нас</h1>
+                <h1 class="about__title">ABOUT</h1>
                 <p class="about__text">
-                    Мы создаем ИТ-платформы для цифровой трансформации бизнеса, помогая заказчикам получать устойчивые конкурентные преимущества в цифровую эпоху.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore doloremque expedita veniam vero maiores quis aspernatur officia? Quaerat consectetur libero, autem a dicta atque inventore, ex, quos voluptatem in magni Quaerat consectetur libero, autem a dicta atque inventore, ex, quos voluptatem in magni??
                 </p>
+                <div class="about__cards">
                 <div class="card">
                     <div class="card__img">
-                        <img src="image1.jpg" alt="Изображение 1" class="about__image">
+                        <svg class="svg-icon" width="68" height="51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="#9D9B8F" stroke-width="2" d="M1 15v35M0 50h68M67 50V15M1 12V0M7 43V19M28 43V19M2 1h64M67 0v12M2 11h64M35 23h27M35 31h27M35 39h27M6 44h23M6 18h23"/>
+                            <path fill="#9D9B8F" d="M5 5h2v2H5zM12 5h2v2h-2zM18 5h2v2h-2z"/>
+                        </svg>                        
                     </div>
                     <div class="card__bottom">
-                        <div class="card__caption"></div>
-                        <div class="card_description"></div>
+                        <div class="card__caption">WEB</div>
+                        <div class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic corrupti, magni nostrum reprehenderit doloribus etmamagni nostrum reprehenderitgni nostrum reprehenderit.</div>
                     </div>
                 </div>
+                <div class="card">
+                    <div class="card__img">
+                        <svg class="svg-icon" width="68" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="#9D9B8F" stroke-width="2" d="M30 50V17M51 50V17M29 51h23M29 16h23M1 50V2M38 11V2M0 51h25M0 1h39"/>
+                            <path fill="#9D9B8F" d="M18 44h3v3h-3zM39 44h3v3h-3z"/>
+                        </svg>
+                    </div>
+                    <div class="card__bottom">
+                        <div class="card__caption">IOS AND ANDROID</div>
+                        <div class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic corrupti, magni nostrum reprehenderit doloribus etmamagni nostrum reprehenderitgni nostrum reprehenderit.</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__img">
+                        <svg class="svg-icon" width="69" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="26" cy="26" r="6" stroke="#9D9B8F" stroke-width="2"/>
+                            <circle cx="26" cy="26" r="12" stroke="#9D9B8F" stroke-width="2"/><circle cx="26" cy="26" r="18" stroke="#9D9B8F" stroke-width="2"/>
+                            <circle cx="26" cy="26" r="25" stroke="#9D9B8F" stroke-width="2"/><path stroke="#9D9B8F" stroke-width="2" d="M26 27h39M67.781 21.625l-4 5M62.781 21.625l-4 5M57.781 21.625l-4 5M67.78 32.375l-4-5M62.78 32.375l-4-5M57.78 32.375l-4-5"/></svg>
+                    </div>
+                    <div class="card__bottom">
+                        <div class="card__caption">MARKETING</div>
+                        <div class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic corrupti, magni nostrum reprehenderit doloribus etmamagni nostrum reprehenderitgni nostrum reprehenderit. </div>
+                    </div>
+                </div>
+                     
+            </div>
             </div>
         </section>
     </main>
