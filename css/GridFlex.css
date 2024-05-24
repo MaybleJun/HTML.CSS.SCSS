@@ -1,81 +1,141 @@
-body {
+main {
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 0 auto;
     padding: 20px;
     background-color: #f4f4f4;
-}
-
-/* .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
-    grid-gap: 20px;
-    justify-content: center;
-}
-
-.card {
-    background-color: #f0f0f0;
-    width: 200px;
-    height: 200px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-} */
+    flex-direction: column;
+    height: 100vh;
+}
+
 
 .flex-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    max-width: 1200px;
+    box-sizing: border-box; 
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     box-sizing: border-box;
+    justify-content: center;
 }
 
 .card {
     background-color: #f0f0f0;
-    width: 200px;
-    height: 200px;
+    min-width: 200px;
+    min-height: 100px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 20px;
     align-items: center;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-/* Ensure the last row of cards stretch to fill the container width */
-.grid-container > .card:nth-child(4) {
-    grid-column: span 2;
+
+/* GRID */
+
+
+/* Экраны от 1080px и выше */
+@media (min-width: 1080px) {
+    .grid-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
-.grid-container > .card:nth-child(5) {
-    grid-column: span 5;
+/* Экраны от 860px до 1079px */
+@media (min-width: 860px) and (max-width: 1079px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .grid-container .card:nth-child(5) {
+        grid-column: span 4;
+    }
 }
 
-@media (max-width: 800px) {
-    .grid-container > .card:nth-child(4),
-    .grid-container > .card:nth-child(5) {
+/* Экраны от 640px до 859px */
+@media (min-width: 640px) and (max-width: 859px)  {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid-container .group {
         grid-column: span 3;
     }
 }
 
-@media (max-width: 600px) {
-    .grid-container > .card:nth-child(4),
-    .grid-container > .card:nth-child(5) {
+/* Экраны от 420px до 639px */
+@media (min-width: 420px) and (max-width: 639px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+   
+    .grid-container .card:nth-child(5) {
         grid-column: span 2;
     }
 }
 
-@media (max-width: 400px) {
-    .grid-container > .card {
+/* Экраны менее чем 420px */
+@media (max-width: 419px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .grid-container .card {
         grid-column: span 1;
+    }
+}
+
+
+/* FLEX */
+
+/* Экраны от 1080px и выше */
+@media (min-width: 1080px) {
+    .card {
+        width: 18%;
+    }
+}
+
+/* Экраны от 860px до 1079px */
+@media (max-width: 1079px) and (min-width: 860px) {
+    .card {
+        width: 23%;
+    }
+    .card:nth-child(5) {
+        width: 100%;
+    }
+}
+
+/* Экраны от 640px до 859px */
+@media (max-width: 859px) and (min-width: 640px) {
+    .card {
+        width: 20%;
+    }
+    .card:nth-last-child(-n+2) {
+        width: 35%;
+    }
+}
+
+/* Экраны от 420px до 639px */
+@media (max-width: 639px) and (min-width: 420px) {
+    .card {
+        width: 48%;
+    }
+    .card:nth-last-child(1) {
+        width: 100%;
+    }
+}
+
+/* Экраны менее чем 420px */
+@media (max-width: 419px) {
+    .card {
+        width: 100%;
     }
 }
