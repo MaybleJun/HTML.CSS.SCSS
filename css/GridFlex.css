@@ -10,7 +10,7 @@ main {
 }
 
 
-.flex-container {
+.flex__container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -19,7 +19,7 @@ main {
     box-sizing: border-box; 
 }
 
-.grid-container {
+.grid__container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
@@ -28,14 +28,28 @@ main {
     justify-content: center;
 }
 
-.card {
+.card__container {
     background-color: #f0f0f0;
     min-width: 200px;
     min-height: 100px;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
     padding-left: 20px;
-    align-items: center;
+    align-items: flex-start;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.card__container-flex {
+    background-color: #f0f0f0;
+    width: 200px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 20px;
+    align-items: flex-start;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -47,48 +61,56 @@ main {
 
 /* Экраны от 1080px и выше */
 @media (min-width: 1080px) {
-    .grid-container {
+    .grid__container {
         grid-template-columns: repeat(5, 1fr);
     }
 }
 
 /* Экраны от 860px до 1079px */
 @media (min-width: 860px) and (max-width: 1079px) {
-    .grid-container {
+    .grid__container {
         grid-template-columns: repeat(4, 1fr);
     }
-    .grid-container .card:nth-child(5) {
+    .grid__container .card__container:nth-child(5) {
         grid-column: span 4;
     }
 }
 
 /* Экраны от 640px до 859px */
-@media (min-width: 640px) and (max-width: 859px)  {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr);
+@media (min-width: 640px) and (max-width: 859px) {
+    .grid__container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
     }
-    .grid-container .group {
+    .card__container:nth-child(1),
+    .card__container:nth-child(2),
+    .card__container:nth-child(3) {
+        grid-column: span 2;
+    }
+    .card__container:nth-child(4),
+    .card__container:nth-child(5) {
         grid-column: span 3;
     }
 }
 
 /* Экраны от 420px до 639px */
 @media (min-width: 420px) and (max-width: 639px) {
-    .grid-container {
+    .grid__container {
         grid-template-columns: repeat(2, 1fr);
     }
    
-    .grid-container .card:nth-child(5) {
+    .grid__container .card__container:nth-child(5) {
         grid-column: span 2;
     }
 }
 
 /* Экраны менее чем 420px */
 @media (max-width: 419px) {
-    .grid-container {
+    .grid__container {
         grid-template-columns: 1fr;
     }
-    .grid-container .card {
+    .grid__container .card__container {
         grid-column: span 1;
     }
 }
@@ -98,44 +120,44 @@ main {
 
 /* Экраны от 1080px и выше */
 @media (min-width: 1080px) {
-    .card {
-        width: 18%;
+    .card__container-flex {
+        width: 200px;
     }
 }
 
 /* Экраны от 860px до 1079px */
 @media (max-width: 1079px) and (min-width: 860px) {
-    .card {
-        width: 23%;
+    .card__container-flex {
+        width: 200px;
     }
-    .card:nth-child(5) {
-        width: 100%;
+    .card__container-flex:nth-child(5) {
+        width: 860px;
     }
 }
 
 /* Экраны от 640px до 859px */
 @media (max-width: 859px) and (min-width: 640px) {
-    .card {
-        width: 20%;
+    .card__container-flex {
+        width: 200px;
     }
-    .card:nth-last-child(-n+2) {
-        width: 35%;
+    .card__container-flex:nth-last-child(-n+2) {
+        width: 310px;
     }
 }
 
 /* Экраны от 420px до 639px */
 @media (max-width: 639px) and (min-width: 420px) {
-    .card {
-        width: 48%;
+    .card__container-flex {
+        width: 200px;
     }
-    .card:nth-last-child(1) {
-        width: 100%;
+    .card__container-flex:nth-last-child(1) {
+        width: 420px;
     }
 }
 
 /* Экраны менее чем 420px */
 @media (max-width: 419px) {
-    .card {
-        width: 100%;
+    .card__container-flex {
+        width: 200px;
     }
 }

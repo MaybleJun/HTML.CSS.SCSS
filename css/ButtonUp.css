@@ -13,7 +13,9 @@ html {
     height: 50px;
     background-color: #d154aa;
     text-align: center;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     line-height: 50px;
     border-radius: 50%;
     transition: 1.5s;
